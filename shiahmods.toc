@@ -1,0 +1,17 @@
+## Interface: 1
+## Title: ShiahMods
+## Author: Martin Spasov
+## Version: 1.0
+## SavedVariables: shmods
+
+utils.lua
+
+./raid/consumables.xml
+./raid/consumables.lua
+./raid/combatlog.lua
+./raid/debuf_watch.xml
+./raid/debuf_watch.lua
+
+./personal/bars.lua
+
+./epgp/epgp_updater.lua

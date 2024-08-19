@@ -1,0 +1,282 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+    <!-- <Script File="debuf_watch.lua"/> -->
+    <Frame name="SingleDebuffWatchFrame" virtual="true">
+        <Size> <AbsDimension x="40" y="40" /> </Size>
+        <Layers>
+            <Layer level="OVERLAY">
+                <Texture name="$parentTexture">
+                    <TexCoords left="0" right="1" top="0" bottom="1"/>
+                </Texture>
+                <FontString name="$parentCooldown" inherits="NumberFontNormalSmall" justifyH="RIGHT">
+					<Anchors>
+						<Anchor point="BOTTOMLEFT"><Offset> <AbsDimension x="5" y="5"/></Offset></Anchor>
+					</Anchors>
+				</FontString>
+                <FontString name="$parentStacks" inherits="NumberFontNormalSmall" justifyH="RIGHT">
+					<Anchors>
+						<Anchor point="TOPRIGHT"><Offset> <AbsDimension x="-5" y="-5"/></Offset></Anchor>
+					</Anchors>
+				</FontString>
+            </Layer>
+        </Layers>
+    </Frame>
+
+    <Frame name="DebuffWatchFrame" virtual="false" toplevel="true" enableMouse="true" movable="true">
+        <Size> <AbsDimension x="160" y="40" /> </Size>
+        <Anchors><Anchor point="CENTER"><Offset><AbsDimension x="0" y="-30" /></Offset></Anchor></Anchors>
+        <Frames>
+            <Frame name="$parent11" inherits="SingleDebuffWatchFrame">
+                <Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="0" y="0" /></Offset></Anchor></Anchors>
+                <Scripts>
+                    <OnLoad>
+                        local texture = _G[self:GetName().."Texture"]
+                        texture:SetTexture("Interface/icons/ability_warrior_sunder")
+                        texture:SetVertexColor(0.5, 0.5, 0.5)
+                        self.time_since_last_update = 0
+                        self.spell_id = 11597
+                    </OnLoad>
+                    <OnUpdate>
+                        debuff_watch_update(self)
+                    </OnUpdate>
+                </Scripts>
+            </Frame>
+            <Frame name="$parentDemo" inherits="SingleDebuffWatchFrame">
+                <Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="40" y="0" /></Offset></Anchor></Anchors>
+                <Scripts>
+                    <OnLoad>
+                        local texture = _G[self:GetName().."Texture"]
+                        texture:SetTexture("Interface/icons/ability_warrior_warcry")
+                        texture:SetVertexColor(0.5, 0.5, 0.5)
+                        self.time_since_last_update = 0
+                        self.spell_id = 1160
+                    </OnLoad>
+                    <OnUpdate>
+                        debuff_watch_update(self)
+                    </OnUpdate>
+                </Scripts>
+            </Frame>
+            <Frame name="$parentRend" inherits="SingleDebuffWatchFrame">
+                <Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="80" y="0" /></Offset></Anchor></Anchors>
+                <Scripts>
+                    <OnLoad>
+                        local texture = _G[self:GetName().."Texture"]
+                        texture:SetTexture("Interface/icons/ability_gouge")
+                        texture:SetVertexColor(0.5, 0.5, 0.5)
+                        self.time_since_last_update = 0
+                        self.spell_id = 11574
+                    </OnLoad>
+                    <OnUpdate>
+                        debuff_watch_update(self)
+                    </OnUpdate>
+                </Scripts>
+            </Frame>
+            <Frame name="$parentEA" inherits="SingleDebuffWatchFrame">
+                <Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="120" y="0" /></Offset></Anchor></Anchors>
+                <Scripts>
+                    <OnLoad>
+                        local texture = _G[self:GetName().."Texture"]
+                        texture:SetTexture("Interface/icons/ability_warrior_riposte")
+                        texture:SetVertexColor(0.5, 0.5, 0.5)
+                        self.time_since_last_update = 0
+                        self.spell_id = 11198
+                    </OnLoad>
+                    <OnUpdate>
+                        debuff_watch_update(self)
+                    </OnUpdate>
+                </Scripts>
+            </Frame>
+            <Frame name="$parentFFFeral" inherits="SingleDebuffWatchFrame">
+                <Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="0" y="-40" /></Offset></Anchor></Anchors>
+                <Scripts>
+                    <OnLoad>
+                        local texture = _G[self:GetName().."Texture"]
+                        texture:SetTexture("Interface/icons/spell_nature_faeriefire")
+                        texture:SetVertexColor(0.5, 0.5, 0.5)
+                        self.time_since_last_update = 0
+                        self.spell_id = 17392
+                    </OnLoad>
+                    <OnUpdate>
+                        debuff_watch_update(self)
+                    </OnUpdate>
+                </Scripts>
+            </Frame>
+            <Frame name="$parentFF" inherits="SingleDebuffWatchFrame">
+                <Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="40" y="-40" /></Offset></Anchor></Anchors>
+                <Scripts>
+                    <OnLoad>
+                        local texture = _G[self:GetName().."Texture"]
+                        texture:SetTexture("Interface/icons/spell_nature_faeriefire")
+                        texture:SetVertexColor(0.5, 0.5, 0.5)
+                        self.time_since_last_update = 0
+                        self.spell_id = 9907
+                    </OnLoad>
+                    <OnUpdate>
+                        debuff_watch_update(self)
+                    </OnUpdate>
+                </Scripts>
+            </Frame>
+            <Frame name="$parentReck" inherits="SingleDebuffWatchFrame">
+                <Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="0" y="-80" /></Offset></Anchor></Anchors>
+                <Scripts>
+                    <OnLoad>
+                        local texture = _G[self:GetName().."Texture"]
+                        texture:SetTexture("Interface/icons/spell_shadow_unholystrength")
+                        texture:SetVertexColor(0.5, 0.5, 0.5)
+                        self.time_since_last_update = 0
+                        self.spell_id = 11717
+                    </OnLoad>
+                    <OnUpdate>
+                        debuff_watch_update(self)
+                    </OnUpdate>
+                </Scripts>
+            </Frame>
+            <Frame name="$parentElements" inherits="SingleDebuffWatchFrame">
+                <Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="40" y="-80" /></Offset></Anchor></Anchors>
+                <Scripts>
+                    <OnLoad>
+                        local texture = _G[self:GetName().."Texture"]
+                        texture:SetTexture("Interface/icons/spell_shadow_chilltouch")
+                        texture:SetVertexColor(0.5, 0.5, 0.5)
+                        self.time_since_last_update = 0
+                        self.spell_id = 11722
+                    </OnLoad>
+                    <OnUpdate>
+                        debuff_watch_update(self)
+                    </OnUpdate>
+                </Scripts>
+            </Frame>
+            <Frame name="$parentShadow" inherits="SingleDebuffWatchFrame">
+                <Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="80" y="-80" /></Offset></Anchor></Anchors>
+                <Scripts>
+                    <OnLoad>
+                        local texture = _G[self:GetName().."Texture"]
+                        texture:SetTexture("Interface/icons/spell_shadow_curseofachimonde")
+                        texture:SetVertexColor(0.5, 0.5, 0.5)
+                        self.time_since_last_update = 0
+                        self.spell_id = 17937
+                    </OnLoad>
+                    <OnUpdate>
+                        debuff_watch_update(self)
+                    </OnUpdate>
+                </Scripts>
+            </Frame>
+            <Frame name="$parentAgony" inherits="SingleDebuffWatchFrame">
+                <Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="0" y="-120" /></Offset></Anchor></Anchors>
+                <Scripts>
+                    <OnLoad>
+                        local texture = _G[self:GetName().."Texture"]
+                        texture:SetTexture("Interface/icons/spell_shadow_curseofsargeras")
+                        texture:SetVertexColor(0.5, 0.5, 0.5)
+                        self.time_since_last_update = 0
+                        self.spell_id = 11713
+                    </OnLoad>
+                    <OnUpdate>
+                        debuff_watch_update(self)
+                    </OnUpdate>
+                </Scripts>
+            </Frame>
+            <Frame name="$parentCorruption" inherits="SingleDebuffWatchFrame">
+                <Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="40" y="-120" /></Offset></Anchor></Anchors>
+                <Scripts>
+                    <OnLoad>
+                        local texture = _G[self:GetName().."Texture"]
+                        texture:SetTexture("Interface/icons/spell_shadow_abominationexplosion")
+                        texture:SetVertexColor(0.5, 0.5, 0.5)
+                        self.time_since_last_update = 0
+                        self.spell_id = 25311
+                    </OnLoad>
+                    <OnUpdate>
+                        debuff_watch_update(self)
+                    </OnUpdate>
+                </Scripts>
+            </Frame>
+            <Frame name="$parentShadowWordPain" inherits="SingleDebuffWatchFrame">
+                <Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="80" y="-120" /></Offset></Anchor></Anchors>
+                <Scripts>
+                    <OnLoad>
+                        local texture = _G[self:GetName().."Texture"]
+                        texture:SetTexture("Interface/icons/spell_shadow_shadowwordpain")
+                        texture:SetVertexColor(0.5, 0.5, 0.5)
+                        self.time_since_last_update = 0
+                        self.spell_id = 10894
+                    </OnLoad>
+                    <OnUpdate>
+                        debuff_watch_update(self)
+                    </OnUpdate>
+                </Scripts>
+            </Frame>
+            <Frame name="$parentHunterMark" inherits="SingleDebuffWatchFrame">
+                <Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="0" y="-160" /></Offset></Anchor></Anchors>
+                <Scripts>
+                    <OnLoad>
+                        local texture = _G[self:GetName().."Texture"]
+                        texture:SetTexture("Interface/icons/ability_hunter_snipershot")
+                        texture:SetVertexColor(0.5, 0.5, 0.5)
+                        self.time_since_last_update = 0
+                        self.spell_id = 14325
+                    </OnLoad>
+                    <OnUpdate>
+                        debuff_watch_update(self)
+                    </OnUpdate>
+                </Scripts>
+            </Frame>
+            <Frame name="$parentViper" inherits="SingleDebuffWatchFrame">
+                <Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="40" y="-160" /></Offset></Anchor></Anchors>
+                <Scripts>
+                    <OnLoad>
+                        local texture = _G[self:GetName().."Texture"]
+                        texture:SetTexture("Interface/icons/ability_hunter_aimedshot")
+                        texture:SetVertexColor(0.5, 0.5, 0.5)
+                        self.time_since_last_update = 0
+                        self.spell_id = 14280
+                    </OnLoad>
+                    <OnUpdate>
+                        debuff_watch_update(self)
+                    </OnUpdate>
+                </Scripts>
+            </Frame>
+            <Frame name="$parentSerpent" inherits="SingleDebuffWatchFrame">
+                <Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="80" y="-160" /></Offset></Anchor></Anchors>
+                <Scripts>
+                    <OnLoad>
+                        local texture = _G[self:GetName().."Texture"]
+                        texture:SetTexture("Interface/icons/ability_hunter_quickshot")
+                        texture:SetVertexColor(0.5, 0.5, 0.5)
+                        self.time_since_last_update = 0
+                        self.spell_id = 25295
+                    </OnLoad>
+                    <OnUpdate>
+                        debuff_watch_update(self)
+                    </OnUpdate>
+                </Scripts>
+            </Frame>
+            <Frame name="$parentScorpid" inherits="SingleDebuffWatchFrame">
+                <Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="120" y="-160" /></Offset></Anchor></Anchors>
+                <Scripts>
+                    <OnLoad>
+                        local texture = _G[self:GetName().."Texture"]
+                        texture:SetTexture("Interface/icons/ability_hunter_criticalshot")
+                        texture:SetVertexColor(0.5, 0.5, 0.5)
+                        self.time_since_last_update = 0
+                        self.spell_id = 14277
+                    </OnLoad>
+                    <OnUpdate>
+                        debuff_watch_update(self)
+                    </OnUpdate>
+                </Scripts>
+            </Frame>
+        </Frames>
+        <Scripts>
+            <OnLoad>
+                if LoggingCombat() then self:Show() else self:Hide() end
+            </OnLoad>
+            <OnMouseDown>
+				self:StartMoving();
+			</OnMouseDown>
+			<OnMouseUp>
+				self:StopMovingOrSizing();
+			</OnMouseUp>
+        </Scripts>
+    </Frame>
+</Ui>
