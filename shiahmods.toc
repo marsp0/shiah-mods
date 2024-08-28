@@ -11,6 +11,7 @@ utils.lua
 ./raid/combatlog.lua
 ./raid/debuf_watch.xml
 ./raid/debuf_watch.lua
+./raid/alt_invite.lua
 
 ./personal/bars.lua
 
