@@ -6,5 +6,5 @@ f:SetScript("OnEvent", function()
 
     TargetFrame:ClearAllPoints()
     TargetFrame:SetPoint("CENTER", 221, -165)
-    print("Shiah Mods: movet player and target frames")
+    print("Shiah Mods: moved player and target frames")
 end)
