@@ -14,5 +14,6 @@ utils.lua
 ./raid/alt_invite.lua
 
 ./personal/bars.lua
+./personal/frames.lua
 
 ./epgp/epgp_updater.lua
