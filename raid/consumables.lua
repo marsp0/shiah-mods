@@ -74,4 +74,4 @@ SlashCmdList['BUFF_CHECKER_SLASHCMD'] = function(msg)
         f:Show()
     end
 end
-SLASH_BUFF_CHECKER_SLASHCMD1 = '/buff_checker'
+SLASH_BUFF_CHECKER_SLASHCMD1 = '/buffs'

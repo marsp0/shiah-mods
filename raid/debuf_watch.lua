@@ -132,4 +132,4 @@ SlashCmdList['DEBUFF_WATCH_SLASHCMD'] = function(msg)
         f:Show()
     end
 end
-SLASH_DEBUFF_WATCH_SLASHCMD1 = '/debuff_watch'
+SLASH_DEBUFF_WATCH_SLASHCMD1 = '/debuffs'
