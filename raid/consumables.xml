@@ -34,15 +34,9 @@
             </Layer>
         </Layers>
         <Scripts>
-            <OnMouseDown>
-                self:StartMoving()
-            </OnMouseDown>
-            <OnMouseUp>
-                self:StopMovingOrSizing()
-            </OnMouseUp>
-            <OnLoad>
-                self:Hide()
-            </OnLoad>
+            <OnMouseDown>self:StartMoving()</OnMouseDown>
+            <OnMouseUp>self:StopMovingOrSizing()</OnMouseUp>
+            <OnLoad>self:Hide()</OnLoad>
         </Scripts>
     </Frame>
 </Ui>
