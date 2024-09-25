@@ -12,11 +12,11 @@ MainMenuBarBackpackButton:Hide()
 MainMenuBarArtFrame:Hide()
 
 -- move MainMenuBar to the center
-x_offset = MultiBarBottomLeft:GetWidth() / 2
+local x_offset = MultiBarBottomLeft:GetWidth() / 2
 MainMenuBar:SetPoint("CENTER", x_offset + 5, 0)
 
 -- y offset between bars the same as x offset between buttons
-_, _, p, x, y = ActionButton2:GetPoint()
+local _, _, p, x, y = ActionButton2:GetPoint()
 MultiBarBottomLeft:SetPoint("TOPLEFT", 8, -x)
 
 -- move action buttons to MainMenuBar frame
