@@ -18,10 +18,6 @@ raid_zones_map = {
     [309] = true
 }
 
-function startswith(str, sub)
-    return string.sub(str,1,string.len(sub))==sub
-end
-
 function SM_print(msg)
     print("Shiah Mods: " .. msg)
 end

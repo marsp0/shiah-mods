@@ -1,4 +1,4 @@
-print("bars.lua code called")
+SM_print("bars.lua code called")
 
 -- remove gryphons
 MainMenuBarLeftEndCap:Hide()

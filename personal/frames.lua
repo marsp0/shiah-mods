@@ -8,6 +8,6 @@ f:SetScript("OnEvent", function(self, event, ...)
 
         TargetFrame:ClearAllPoints()
         TargetFrame:SetPoint("CENTER", 221, -165)
-        print("Shiah Mods: moved player and target frames")
+        SM_print("Moved player and target frames")
     end
 end)

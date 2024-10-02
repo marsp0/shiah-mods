@@ -2,10 +2,10 @@ function combat_log_event()
     local zoneName, instanceType, _, _, _, _, _, areaID = GetInstanceInfo()
 
 	if instanceType == "raid" and raid_zones_map[areaID] then 
-		print("Enabling combatlog")
+		SM_print("Enabling combatlog")
 		LoggingCombat(true)
 	else
-		print("Disabling combatlog")
+		SM_print("Disabling combatlog")
     	LoggingCombat(false)
 	end
 end
