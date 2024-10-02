@@ -12,7 +12,7 @@ function epgp_updater_sync_notes(self, event, ...)
     end
 
     last_sync = GetTime()
-    SM_print("Synced officer and public notes:", last_sync - start_time, "sec")
+    SM_print("Synced officer and public notes")
     processing = false
 end
 
