@@ -32,12 +32,8 @@ SlashCmdList['WBUFFS_SLASHCMD'] = function(msg)
                     missing_buffs = true
                 end
 
-                if (class == "Warrior" or class == "Rogue") and (fengus < time_limit) then
+                if fengus < time_limit and slipkik < time_limit then
                     missing_buffs = true
-                else 
-                    if slipkik < time_limit then
-                        missing_buffs = true
-                    end
                 end
 
                 if missing_buffs then
