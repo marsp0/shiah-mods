@@ -17,5 +17,6 @@ utils.lua
 ./personal/bars.lua
 ./personal/frames.lua
 ./personal/portals.lua
+./personal/tooltip.lua
 
 ./epgp/epgp_updater.lua
