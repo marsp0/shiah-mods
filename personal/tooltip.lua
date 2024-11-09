@@ -32,6 +32,16 @@ GameTooltip:HookScript("OnTooltipSetUnit", function(self)
         else
             GameTooltip:AddLine(guild_line)
         end
+
+        -- target of target
+        local tt_unit   = "mouseovertarget"
+        local tt_name   = GetUnitName(tt_unit)
+
+        if not tt_name then return end
+
+        local tt_class  = UnitClassBase(tt_unit)
+        local tt_color  = RAID_CLASS_COLORS[tt_class]:GenerateHexColorMarkup()
+        GameTooltip:AddLine("Target: " .. tt_color .. tt_name)
     else
         line1:SetText(unit_name)
         line2:SetText("Level " .. unit_level)
