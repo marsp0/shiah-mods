@@ -1,6 +1,10 @@
 function move_frames_to_center(...)
     local isInitialLogin, isReloadingUi = ...
     if isInitialLogin or isReloadingUi then
+
+        SetCVar("UnitNamePlayerGuild", 0)
+        SetCVar("UnitNamePlayerPVPTitle", 0)
+
         PlayerFrame:ClearAllPoints()
         PlayerFrame:SetPoint("CENTER", -221, -165)
 
