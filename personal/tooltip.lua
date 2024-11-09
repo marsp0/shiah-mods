@@ -24,9 +24,10 @@ GameTooltip:HookScript("OnTooltipSetUnit", function(self)
 
         -- guild - rank
         local guild, guild_rank = GetGuildInfo(unit)
-        if not guild then return end
-        local guild_line = "|c00aaaaff" .. guild .. " - " .. guild_rank
-        GameTooltip:AddLine(guild_line)
+        if guild then
+            local guild_line = "|c00aaaaff" .. guild .. " - " .. guild_rank
+            GameTooltip:AddLine(guild_line)
+        end
     end
 
     -- target of target
