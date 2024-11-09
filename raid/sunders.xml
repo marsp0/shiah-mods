@@ -1,0 +1,49 @@
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
+..\FrameXML\UI.xsd">
+    <Frame name="SingleDebuffWatchFrame" virtual="true">
+        <Size> <AbsDimension x="30" y="30" /> </Size>
+        <Layers>
+            <Layer level="OVERLAY">
+                <Texture name="$parentTexture">
+                    <TexCoords left="0" right="1" top="0" bottom="1"/>
+                </Texture>
+                <FontString name="$parentCooldown" inherits="NumberFontNormalSmall" justifyH="RIGHT">
+					<Anchors><Anchor point="BOTTOMLEFT"><Offset> <AbsDimension x="2" y="2"/></Offset></Anchor></Anchors>
+				</FontString>
+                <FontString name="$parentStacks" inherits="NumberFontNormalSmall" justifyH="RIGHT">
+					<Anchors><Anchor point="TOPRIGHT"><Offset> <AbsDimension x="-2" y="-2"/></Offset></Anchor></Anchors>
+				</FontString>
+            </Layer>
+        </Layers>
+    </Frame>
+
+    <Frame name="DebuffWatchFrame" virtual="false" toplevel="true" enableMouse="true" movable="true">
+        <Size> <AbsDimension x="150" y="30" /> </Size>
+        <Anchors><Anchor point="CENTER"><Offset><AbsDimension x="0" y="-30" /></Offset></Anchor></Anchors>
+        <Frames>
+            <Frame name="$parent1" inherits="SingleDebuffWatchFrame">
+                <Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="0" y="0" /></Offset></Anchor></Anchors>
+            </Frame>
+            <Frame name="$parent2" inherits="SingleDebuffWatchFrame">
+                <Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="30" y="0" /></Offset></Anchor></Anchors>
+            </Frame>
+            <Frame name="$parent3" inherits="SingleDebuffWatchFrame">
+                <Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="60" y="0" /></Offset></Anchor></Anchors>
+            </Frame>
+            <Frame name="$parent4" inherits="SingleDebuffWatchFrame">
+                <Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="90" y="0" /></Offset></Anchor></Anchors>
+            </Frame>
+            <Frame name="$parent5" inherits="SingleDebuffWatchFrame">
+                <Anchors><Anchor point="TOPLEFT"><Offset><AbsDimension x="120" y="0" /></Offset></Anchor></Anchors>
+            </Frame>
+            
+        </Frames>
+        <Scripts>
+            <OnLoad>self:RegisterEvent("PLAYER_ENTERING_WORLD")</OnLoad>
+            <OnEvent>sunders_handle_event(self, event, ...)</OnEvent>
+            <OnMouseDown>self:StartMoving();</OnMouseDown>
+			<OnMouseUp>self:StopMovingOrSizing();</OnMouseUp>
+            <OnUpdate>sunders_on_update()</OnUpdate>
+        </Scripts>
+    </Frame>
+</Ui>

@@ -9,11 +9,11 @@ utils.lua
 ./raid/consumables.xml
 ./raid/consumables.lua
 ./raid/combatlog.lua
-./raid/debuf_watch.xml
-./raid/debuf_watch.lua
 ./raid/alt_invite.lua
 ./raid/world_buffs.lua
 ./raid/debuffs.lua
+./raid/sunders.xml
+./raid/sunders.lua
 
 ./personal/bars.lua
 ./personal/frames.lua
