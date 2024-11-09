@@ -16,6 +16,14 @@ GameTooltip:HookScript("OnTooltipSetUnit", function(self)
     local line1 = _G["GameTooltipTextLeft1"]
     local line2 = _G["GameTooltipTextLeft2"]
     local line3 = _G["GameTooltipTextLeft3"]
+    local line4 = _G["GameTooltipTextLeft4"]
+    local line5 = _G["GameTooltipTextLeft5"]
+
+    line1:SetText("")
+    line2:SetText("")
+    line3:SetText("")
+    line4:SetText("")
+    line5:SetText("")
 
     if unit_is_player then
         local unit_color = RAID_CLASS_COLORS[unit_class]:GenerateHexColorMarkup()
