@@ -13,6 +13,7 @@ utils.lua
 ./raid/debuf_watch.lua
 ./raid/alt_invite.lua
 ./raid/world_buffs.lua
+./raid/debuffs.lua
 
 ./personal/bars.lua
 ./personal/frames.lua
