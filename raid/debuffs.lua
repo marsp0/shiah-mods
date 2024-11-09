@@ -1,5 +1,6 @@
 local shit_debuffs = {
     [11574] = true,     -- rend
+    [12294] = true      -- mortal strike
     [11713] = true,     -- agony
     [25311] = true,     -- corruption
     [10894] = true,     -- shadow word pain
