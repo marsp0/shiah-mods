@@ -8,7 +8,7 @@ local shit_debuffs = {
     [25295] = true,     -- serpent sting
     [14277] = true,     -- scorpid
 
-    [2855]  = true,     -- detect magic
+    -- [2855]  = true,     -- detect magic
 }
 
 function debuffs_player_enters_world(self)
