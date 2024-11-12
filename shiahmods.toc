@@ -17,7 +17,7 @@ utils.lua
 
 ./personal/bars.lua
 ./personal/frames.lua
-./personal/portals.lua
+./personal/autoinvite.lua
 ./personal/tooltip.lua
 ./personal/vendor.lua
 
