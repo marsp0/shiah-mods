@@ -27,7 +27,7 @@
         </Frames>
         <Layers>
             <Layer>
-                <FontString name="$parentNames" inherits="GameFontNormalSmall" justifyH="LEFT" justyfyV="TOP" text="Type (Guild/Raid/Name-Server)">
+                <FontString name="$parentNames" inherits="GameFontNormalSmall" justifyH="LEFT" text="Type (Guild/Raid/Name-Server)">
                     <Size> <AbsDimension x="100" y="155" /></Size>
                     <Anchors><Anchor point="TOPLEFT" relativePoint="TOPLEFT" relativeTo="BuffChecker"><Offset x="0" y="-25"/></Anchor></Anchors>
                 </FontString>
