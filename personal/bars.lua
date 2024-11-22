@@ -42,6 +42,7 @@ MainMenuMaxLevelBar2:Hide()
 MainMenuMaxLevelBar3:Hide()
 MainMenuBarMaxLevelBar:Hide()
 MainMenuExpBar:Hide()
+MainMenuExpBar.Show = function (...) return end
 StanceBarFrame:Hide()
 
 -- children = { PlayerFrame:GetChildren() }
