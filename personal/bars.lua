@@ -45,6 +45,12 @@ MainMenuExpBar:Hide()
 MainMenuExpBar.Show = function (...) return end
 StanceBarFrame:Hide()
 
+-- shaman class color
+if not whoaUFaddon and not whoaThFaddon then
+	RAID_CLASS_COLORS["SHAMAN"] = CreateColor(0.0, 0.44, 0.87);
+	RAID_CLASS_COLORS["SHAMAN"].colorStr = RAID_CLASS_COLORS["SHAMAN"]:GenerateHexColor();
+end
+
 -- children = { PlayerFrame:GetChildren() }
 -- for i,k in pairs(children) do
 --     print(i, k:GetName())
