@@ -10,7 +10,7 @@ Small addon that i use for myself.
 - Send invite on "inv" whisper
 
 ## Deleted Features
-(can be found in the git history)
+(I no longer have need for them but can be found in the git history)
 - Debuff tracker
 - Consumable checker
 - World Buff checker
