@@ -2,7 +2,7 @@
 ## Title: ShiahMods
 ## Author: Martin Spasov
 ## Version: 1.0
-## SavedVariables: shmods
+## SavedVariables: SM_kill_map
 
 utils.lua
 
@@ -13,3 +13,4 @@ utils.lua
 ./personal/autoinvite.lua
 ./personal/tooltip.lua
 ./personal/vendor.lua
+./personal/spy.lua
