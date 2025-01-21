@@ -1,5 +1,6 @@
 SM_kill_map = SM_kill_map or {}
 local broadcast_map = {}
+local last_broadcast_time = 0
 
 local f = CreateFrame("Frame")
 f:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
@@ -9,9 +10,10 @@ f:SetScript("OnEvent", function(self, event, ...)
     if not SM_kill_map[name] then return end
 
     local last_shout = broadcast_map[name] or 0
-    if time - last_shout < 20 then return end
+    if time - last_shout < 120 or time - last_broadcast_time < 2 then return end
 
     broadcast_map[name] = time
+    last_broadcast_time = time
     PlaySoundFile("Interface\\AddOns\\ShiahMods\\sounds\\detected-kos.wav")
     SM_print("Kill target: " .. name)
 end)
