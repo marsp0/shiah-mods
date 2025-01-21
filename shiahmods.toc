@@ -5,12 +5,10 @@
 ## SavedVariables: SM_kill_map
 
 utils.lua
-
-./raid/alt_invite.lua
-
-./personal/bars.lua
-./personal/frames.lua
-./personal/autoinvite.lua
-./personal/tooltip.lua
-./personal/vendor.lua
-./personal/spy.lua
+alt_invite.lua
+bars.lua
+frames.lua
+autoinvite.lua
+tooltip.lua
+vendor.lua
+spy.lua
