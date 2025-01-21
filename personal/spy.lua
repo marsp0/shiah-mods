@@ -12,7 +12,7 @@ f:SetScript("OnEvent", function(self, event, ...)
     if time - last_shout < 20 then return end
 
     broadcast_map[name] = time
-    PlaySoundFile("Interface\\AddOns\\BigWigs\\Media\\Sounds\\alert.ogg")
+    PlaySoundFile("Interface\\AddOns\\ShiahMods\\sounds\\detected-kos.wav")
     SM_print("Kill target: " .. name)
 end)
 
