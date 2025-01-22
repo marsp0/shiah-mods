@@ -7,23 +7,15 @@ f:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
 f:SetScript("OnEvent", function(self, event, ...)
 
     local time, _, _, _, name = CombatLogGetCurrentEventInfo()
-    if not name then return end
-
-    local target_faction = UnitFactionGroup(name)
-    if not target_faction or target_faction == UnitFactionGroup("player") then return end
+    if not SM_kill_map[name] then return end
 
     local last_shout = broadcast_map[name] or 0
     if time - last_shout < 120 or time - last_broadcast_time < 2 then return end
 
     broadcast_map[name] = time
     last_broadcast_time = time
-    local sound = "Interface\\AddOns\\ShiahMods\\sounds\\detected-nearby.wav"
-    local msg   = "Detected: "
-
-    if SM_kill_map[name] then 
-        sound   = "Interface\\AddOns\\ShiahMods\\sounds\\detected-kos.wav"
-        msg     = "KOS: "
-    end
+    local sound = "Interface\\AddOns\\ShiahMods\\sounds\\detected-kos.wav"
+    local msg   = "KOS: "
 
     PlaySoundFile(sound)
     SM_print(msg .. name)
