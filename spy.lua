@@ -1,7 +1,6 @@
 SM_kill_map = SM_kill_map or {}
 local broadcast_map = {}
 local last_broadcast_time = 0
-local player_faction = UnitFactionGroup("player")
 
 local f = CreateFrame("Frame")
 f:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
@@ -11,7 +10,7 @@ f:SetScript("OnEvent", function(self, event, ...)
     if not name then return end
 
     local target_faction = UnitFactionGroup(name)
-    if not target_faction or target_faction == player_faction then return end
+    if not target_faction or target_faction == UnitFactionGroup("player") then return end
 
     local last_shout = broadcast_map[name] or 0
     if time - last_shout < 120 or time - last_broadcast_time < 2 then return end
