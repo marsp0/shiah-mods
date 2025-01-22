@@ -12,3 +12,4 @@ autoinvite.lua
 tooltip.lua
 vendor.lua
 spy.lua
+sort.lua
