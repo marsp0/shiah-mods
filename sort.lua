@@ -26,6 +26,9 @@ local exclude_map = {
     [11145] = true,         -- silver rod
     [6339] = true,          -- silver
     [16207] = true,         -- arcanite rod
+    [17031] = true          -- rune of teleportaion
+    [17032] = true          -- rune of portals
+    [17020] = true          -- arcane powder
 }
 
 function SM_should_swap(a_id, b_id)
