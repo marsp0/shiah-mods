@@ -52,8 +52,13 @@ function SM_sort(bag, slot)
     end
 
     ClearCursor()
-    C_Container.PickupContainerItem(min_bag, min_slot)
-    C_Container.PickupContainerItem(bag, slot)
+    if SM_get_sort_item_id(min_bag, min_slot) then 
+        C_Container.PickupContainerItem(min_bag, min_slot)
+        C_Container.PickupContainerItem(bag, slot)
+    else
+        C_Container.PickupContainerItem(min_bag, min_slot)
+        C_Container.PickupContainerItem(bag, slot)
+    end
 
     bag, slot = SM_get_next_bag_slot(bag, slot)
     C_Timer.After(0.4, function() SM_sort(bag, slot) end)
