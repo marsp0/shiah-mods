@@ -8,6 +8,8 @@ Small addon that i use for myself.
 - Positions tooltip on mouse
 - Auto vendor trash + repair
 - Send invite on "inv" whisper
+- KOS list + audio alert when player is near
+- Bag sorting (still experimental)
 
 ## Deleted Features
 (I no longer have need for them but can be found in the git history)
