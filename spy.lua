@@ -3,9 +3,27 @@ local broadcast_map = {}
 local last_broadcast_time = 0
 
 local f = CreateFrame("Frame")
-f:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
-f:SetScript("OnEvent", function(self, event, ...)
+f:RegisterEvent("PLAYER_ENTERING_WORLD")
+f:SetScript("OnEvent", 
+    function(self, event, ...)
+        if event == "PLAYER_ENTERING_WORLD"         then spy_enter_world() end
+        if event == "COMBAT_LOG_EVENT_UNFILTERED"   then spy_combat_log() end
+    end
+)
 
+function spy_enter_world()
+    local _, instante_type, _, _, _, _, _, areaID = GetInstanceInfo()
+
+    if instance_type then
+        f:UnregisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
+        SM_print("Raid zone detected, disabling spy")
+    else
+        f:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
+        SM_print("Spy enabled")
+    end
+end
+
+function spy_combat_log()
     local time, _, _, _, name = CombatLogGetCurrentEventInfo()
     if not SM_kill_map[name] then return end
 
@@ -19,7 +37,7 @@ f:SetScript("OnEvent", function(self, event, ...)
 
     PlaySoundFile(sound)
     SM_print(msg .. name)
-end)
+end
 
 SlashCmdList['KILL_SLASHCMD'] = function(msg) 
     if msg == "" then msg = UnitName("target") end
