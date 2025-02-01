@@ -13,3 +13,4 @@ tooltip.lua
 vendor.lua
 spy.lua
 sort.lua
+health.lua
