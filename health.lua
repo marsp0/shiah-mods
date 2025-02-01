@@ -1,14 +1,20 @@
 TargetFrameTextureFrame:CreateFontString("TargetFrameHealthBarText", "BORDER", "TextStatusBarText")
 TargetFrameHealthBarText:SetPoint("CENTER", TargetFrameTextureFrame, "CENTER", -50, 3)
 
-UnitFrameHealthBar_Initialize("target", TargetFrameHealthBar, TargetFrameHealthBarText, true)
-
-function health_update(statusFrame, textString, value, valueMin, valueMax)
-    if (statusFrame.pauseUpdates) then textString:Hide() end
+local f = CreateFrame("Frame")
+f:RegisterEvent("PLAYER_TARGET_CHANGED")
+f:RegisterEvent("UNIT_HEALTH")
+f:SetScript("OnEvent", function(self, event, unit)
+    if (event == "UNIT_HEALTH" and unit ~= "target") then
+        return
+    end
     
-    local val = AbbreviateLargeNumbers(value)
-    local max_val = AbbreviateLargeNumbers(valueMax)
-    textString:SetText(math.ceil((val / max_val) * 100) .. "%")
-end
+    if UnitIsDead("target") then
+        TargetFrameHealthBarText:SetText("")
+        return
+    end
 
-hooksecurefunc("TextStatusBar_UpdateTextStringWithValues", health_update)
+    local val = AbbreviateLargeNumbers(UnitHealth("target"))
+    local max_val = AbbreviateLargeNumbers(UnitHealthMax("target"))
+    TargetFrameHealthBarText:SetText(math.ceil((val / max_val) * 100) .. "%")
+end)
