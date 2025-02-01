@@ -14,7 +14,7 @@ f:SetScript("OnEvent", function(self, event, unit)
         return
     end
 
-    local val = AbbreviateLargeNumbers(UnitHealth("target"))
-    local max_val = AbbreviateLargeNumbers(UnitHealthMax("target"))
+    local val = UnitHealth("target")
+    local max_val = UnitHealthMax("target")
     TargetFrameHealthBarText:SetText(math.ceil((val / max_val) * 100) .. "%")
 end)
