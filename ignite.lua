@@ -2,6 +2,8 @@ local frequency = 4
 local last_update = 0
 local update_interval = 1 / frequency
 
+-- TODO: activate when in combat
+
 function ignite_clear(name)
     _G[name .. "Texture"]:SetVertexColor(0.5, 0.5, 0.5)
     _G[name .. "Stacks"]:SetText("")
@@ -46,7 +48,7 @@ local fi = create_debuff("Ignite", f, "Interface\\Icons\\Spell_Fire_Incinerate",
 local fv = create_debuff("Fire Vulnerability", f, "Interface\\Icons\\Spell_Fire_SoulBurn", 40)
 
 function ignite_enter_world()
-    if not IsInInstance() then SM_print("Ignite disabled"); return end
+    if not IsInInstance() then SM_print("Ignite disabled"); f:Hide(); return end
     f:Show()
     f:SetScript("OnUpdate", ignite_on_update)
     SM_print("Ignite enabled")
