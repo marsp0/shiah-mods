@@ -14,3 +14,4 @@ vendor.lua
 spy.lua
 sort.lua
 health.lua
+ignite.lua
