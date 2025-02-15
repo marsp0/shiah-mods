@@ -30,6 +30,7 @@ function create_debuff(name, parent, texture_path, x_offset)
 end
 
 local f = CreateFrame("Frame", "FireDebuffFrame", UIParent)
+f:Hide()
 f:SetPoint("CENTER", 0, -160)
 f:SetSize(80, 40)
 f:RegisterEvent("PLAYER_ENTERING_WORLD")
@@ -46,6 +47,7 @@ local fv = create_debuff("Fire Vulnerability", f, "Interface\\Icons\\Spell_Fire_
 
 function ignite_enter_world()
     if not IsInInstance() then SM_print("Ignite disabled"); return end
+    f:Show()
     f:SetScript("OnUpdate", ignite_on_update)
     SM_print("Ignite enabled")
 end
