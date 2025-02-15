@@ -14,7 +14,7 @@ f:SetScript("OnEvent",
 function spy_enter_world()
     if IsInInstance() then
         f:UnregisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
-        SM_print("Instanced zone detected, disabling spy")
+        SM_print("Spy disabled")
     else
         f:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
         SM_print("Spy enabled")
