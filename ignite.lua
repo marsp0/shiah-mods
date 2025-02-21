@@ -55,8 +55,6 @@ function ignite_enter_world()
 end
 
 function ignite_target_changed()
-    if GetUnitName("target") then return end
-
     ignite_clear("Ignite")
     ignite_clear("Fire Vulnerability")
 end
