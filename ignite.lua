@@ -21,8 +21,8 @@ function create_debuff(name, parent, texture_path, x_offset)
     t:SetPoint("TOPLEFT", frame, 0, 0)
     t:SetSize(40, 40)
 
-    local s = frame:CreateFontString(name .. "Stacks", "OVERLAY", "NumberFontNormal")
-    s:SetPoint("BOTTOMRIGHT", frame, -1, 2)
+    local s = frame:CreateFontString(name .. "Stacks", "OVERLAY", "NumberFontNormalLarge")
+    s:SetPoint("CENTER", frame, 0, 0)
 
     local cd = CreateFrame("Cooldown", name .. "Cooldown", frame, "CooldownFrameTemplate")
     cd:SetDrawEdge(false)
