@@ -8,7 +8,6 @@ utils.lua
 alt_invite.lua
 bars.lua
 frames.lua
-autoinvite.lua
 tooltip.lua
 vendor.lua
 spy.lua
