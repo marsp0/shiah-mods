@@ -6,6 +6,7 @@ MainMenuBarRightEndCap:Hide()
 MainMenuBarPerformanceBarFrame:Hide()
 MainMenuBarBackpackButton:Hide()
 MainMenuBarArtFrame:Hide()
+MultiBarBottomRight:Hide()
 
 -- move MainMenuBar to the center
 local x_offset = MultiBarBottomLeft:GetWidth() / 2
@@ -41,8 +42,5 @@ MainMenuExpBar:Hide()
 MainMenuExpBar.Show = function (...) return end
 StanceBarFrame:Hide()
 
--- shaman class color
-if not whoaUFaddon and not whoaThFaddon then
-	RAID_CLASS_COLORS["SHAMAN"] = CreateColor(0.0, 0.44, 0.87);
-	RAID_CLASS_COLORS["SHAMAN"].colorStr = RAID_CLASS_COLORS["SHAMAN"]:GenerateHexColor();
-end
+RAID_CLASS_COLORS["SHAMAN"] = CreateColor(0.0, 0.44, 0.87);
+RAID_CLASS_COLORS["SHAMAN"].colorStr = RAID_CLASS_COLORS["SHAMAN"]:GenerateHexColor();
