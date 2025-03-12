@@ -13,6 +13,7 @@ t:SetSize(30, 30)
 
 local cd = CreateFrame("Cooldown", "IgniteCooldown", f, "CooldownFrameTemplate")
 cd:SetDrawEdge(false)
+cd:SetScript("OnCooldownDone", function() t:SetVertexColor(0.5, 0.5, 0.5); s:SetText("") end)
 
 local s = f:CreateFontString("IgniteStacks", "OVERLAY", "NumberFontNormalLarge")
 s:SetPoint("CENTER", f, 0, 0)
