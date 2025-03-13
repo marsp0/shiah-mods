@@ -13,7 +13,6 @@ vendor.lua
 spy.lua
 health.lua
 ignite.lua
-questie.lua
 map.lua
 
 # find . -name '*.toc' -o -name '*.xml' -o -name '*.md' -o -name '*.lua' | xargs wc -l
