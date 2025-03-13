@@ -13,7 +13,6 @@ t:SetSize(30, 30)
 
 local cd = CreateFrame("Cooldown", "IgniteCooldown", f, "CooldownFrameTemplate")
 cd:SetDrawEdge(false)
-cd:SetScript("OnCooldownDone", function() t:SetVertexColor(0.5, 0.5, 0.5); s:SetText("") end)
 
 local s = f:CreateFontString("IgniteStacks", "OVERLAY", "NumberFontNormalLarge")
 s:SetPoint("CENTER", f, 0, 0)
@@ -22,6 +21,8 @@ f:SetScript("OnEvent", function(self, event, unit)
     if event == "PLAYER_ENTERING_WORLD" then ignite_enter_world() end
     if event == "UNIT_AURA" then ignite_unit_aura(unit) end
 end)
+
+cd:SetScript("OnCooldownDone", function() t:SetVertexColor(0.5, 0.5, 0.5); s:SetText("") end)
 
 function ignite_enter_world()
     if IsInInstance() then  SM_print("Ignite enabled");     f:Show();   f:RegisterUnitEvent("UNIT_AURA", "target"); return; end
