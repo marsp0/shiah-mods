@@ -1,6 +1,6 @@
 local last_update = 0
 local update_interval = 1 / 5 -- 5 Hz
-local _, cls, _ = UnitClass("unit");
+local _, cls, _ = UnitClass("player");
 if cls ~= "MAGE" then return end
 
 local f = CreateFrame("Frame", "IgniteFrame", TargetFrame)
