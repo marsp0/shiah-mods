@@ -1,5 +1,7 @@
 local last_update = 0
 local update_interval = 1 / 5 -- 5 Hz
+local _, cls, _ = UnitClass("unit");
+if cls ~= "MAGE" then return end
 
 local f = CreateFrame("Frame", "IgniteFrame", TargetFrame)
 f:SetSize(30, 30)
