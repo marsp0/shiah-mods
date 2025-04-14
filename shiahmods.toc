@@ -2,7 +2,7 @@
 ## Title: ShiahMods
 ## Author: Martin Spasov
 ## Version: 1.0
-## SavedVariables: SM_kill_map
+## SavedVariables: SM_kill_map,SM_dmg_db
 
 utils.lua
 alt_invite.lua
@@ -14,5 +14,6 @@ spy.lua
 health.lua
 ignite.lua
 map.lua
+meters.lua
 
 # find . -name '*.toc' -o -name '*.xml' -o -name '*.md' -o -name '*.lua' | xargs wc -l
