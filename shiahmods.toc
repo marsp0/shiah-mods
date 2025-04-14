@@ -14,6 +14,8 @@ spy.lua
 health.lua
 ignite.lua
 map.lua
-meters.lua
+
+meters/window.lua
+meters/damage.lua
 
 # find . -name '*.toc' -o -name '*.xml' -o -name '*.md' -o -name '*.lua' | xargs wc -l
