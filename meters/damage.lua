@@ -136,6 +136,7 @@ function damage_on_update(self)
             local max_dmg = SM_dmg_db[current_view][names[1]]["Total"]
             local _, class = UnitClass(name);
             damage_assign_unit_to_bar(bar, i, player_name, RAID_CLASS_COLORS[class], dmg, max_dmg)
+            break
         end
     end
 
