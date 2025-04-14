@@ -17,5 +17,6 @@ map.lua
 
 meters/window.lua
 meters/damage.lua
+meters/threat.lua
 
 # find . -name '*.toc' -o -name '*.xml' -o -name '*.md' -o -name '*.lua' | xargs wc -l

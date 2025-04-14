@@ -53,7 +53,7 @@ function meters_create_table(name, x_offset, y_offset, on_tooltip_show)
 
     local create_text_bar = function(parent, name, justify)
         local f = parent:CreateFontString(name, "OVERLAY", "GameFontNormal")
-        f:SetFont(STANDARD_TEXT_FONT, 10)
+        f:SetFont(STANDARD_TEXT_FONT, 10, "THINOUTLINE")
         f:SetJustifyH(justify)
         f:SetFontObject(GameFontWhite)
         f:SetParent(parent)
@@ -83,4 +83,13 @@ function meters_create_table(name, x_offset, y_offset, on_tooltip_show)
 
     table:Show()
     return table
+end
+
+function meters_clear_bars(window)
+    for i, bar in pairs(window.bars) do 
+        bar.left:SetText("")
+        bar.right:SetText("")
+        bar.unit = nil
+        bar:SetValue(0)
+    end
 end

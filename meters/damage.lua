@@ -56,17 +56,8 @@ local function damage_assign_unit_to_bar(bar, index, name, color, value, max_val
     bar:SetStatusBarColor(color.r, color.g, color.b, 1)
 end
 
-local function damage_clear_bars(window)
-    for i, bar in pairs(window.bars) do 
-        bar.left:SetText("")
-        bar.right:SetText("")
-        bar.unit = nil
-        bar:SetValue(0)
-    end
-end
-
 local function damage_swap_view(self, new_view)
-    damage_clear_bars(self)
+    meters_clear_bars(self)
     current_view = new_view
     self.title:SetText(current_view)
 end
@@ -111,7 +102,6 @@ function damage_on_update(self)
         SM_dmg_db["Current"] = {}
         recent_cleared = true
         damage_swap_view(self, "Overall")
-        print("cleared current segment")
     end
 
     -- sort names by damage
@@ -164,7 +154,7 @@ SlashCmdList['CLEAR_SLASHCMD'] = function(msg)
     SM_dmg_db = {}
     SM_dmg_db["Overall"] = {}
     SM_dmg_db["Current"] = {}
-    damage_clear_bars(window)
+    meters_clear_bars(frame)
     SM_print("DPS database cleared")
 end
 SLASH_CLEAR_SLASHCMD1 = '/clear'
