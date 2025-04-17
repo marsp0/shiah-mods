@@ -23,7 +23,7 @@ window:SetBackdrop(backdrop_window)
 window:SetBackdropColor(.5,.5,.5,.5)
 window:SetWidth(total_width)
 window:SetHeight(bar_height * 10 + title_height + 4)
-window:SetPoint("RIGHT", UIParent, "RIGHT", -150, -150)
+window:SetPoint("RIGHT", UIParent, "RIGHT", -150, -205)
 
 window.border = CreateFrame("Frame", "$parentBorder", window, "BackdropTemplate")
 window.border:ClearAllPoints()
