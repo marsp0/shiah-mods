@@ -25,8 +25,10 @@ local function threat_on_update(self)
             if IsInRaid("player") then unit = "raid"..i end
             
             local name = UnitName(unit)
-            local _, _, percent, _, value = UnitDetailedThreatSituation(unit, "target")
-            data[name] = percent or 0;
+            if name then
+                local _, _, percent, _, value = UnitDetailedThreatSituation(unit, "target")
+                data[name] = percent or 0;
+            end
         end
     else
         local name = UnitName("player")
