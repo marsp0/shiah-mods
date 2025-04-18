@@ -29,12 +29,12 @@ local function threat_on_update(self)
                 local _, _, percent, _, value = UnitDetailedThreatSituation(unit, "target")
                 data[name] = percent or 0;
             end
-        end
-    else
-        local name = UnitName("player")
-        local _, _, percent, _, value = UnitDetailedThreatSituation("player", "target")
-        data[name] = percent or 0;
+        end        
     end
+
+    local name = UnitName("player")
+    local _, _, percent, _, value = UnitDetailedThreatSituation("player", "target")
+    data[name] = percent or 0;
 
     -- sort + draw
     local names = {}
