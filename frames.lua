@@ -42,6 +42,8 @@ end
 local f = CreateFrame("Frame")
 f:RegisterEvent("PLAYER_ENTERING_WORLD")
 f:RegisterEvent("PLAYER_TARGET_CHANGED")
+f:RegisterEvent("GROUP_ROSTER_UPDATE")
+f:RegisterEvent("UNIT_FACTION")
 f:SetScript("OnEvent", function(self, event, ...)
     if event == "PLAYER_ENTERING_WORLD" then move_frames_to_center(...); return end
     
