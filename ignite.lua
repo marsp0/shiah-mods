@@ -77,7 +77,7 @@ end
 window:RegisterEvent("PLAYER_ENTERING_WORLD")
 window:RegisterEvent("PLAYER_TARGET_CHANGED")
 window:SetScript("OnEvent", function(self, event, ...)
-    if event == "PLAYER_ENTERING_WORLD" then ignite_enter_world(self) end
-    if event == "PLAYER_TARGET_CHANGED" then ignite_target_changed() end
-    if event == "COMBAT_LOG_EVENT_UNFILTERED" then ignite_combat_log_event() end
+    if event == "PLAYER_ENTERING_WORLD"         then ignite_enter_world(self) end
+    if event == "PLAYER_TARGET_CHANGED"         then ignite_target_changed() end
+    if event == "COMBAT_LOG_EVENT_UNFILTERED"   then ignite_combat_log_event() end
 end)
