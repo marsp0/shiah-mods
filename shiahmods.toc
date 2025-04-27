@@ -14,6 +14,7 @@ spy.lua
 health.lua
 ignite.lua
 map.lua
+taunt.lua
 
 meters/window.lua
 meters/damage.lua
