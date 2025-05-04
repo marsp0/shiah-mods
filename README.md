@@ -7,9 +7,11 @@ Small addon that i use for myself.
 - Positions Player/Target frames in center
 - Positions tooltip on mouse
 - Auto vendor trash + repair
-- Send invite on "inv" whisper
 - KOS list + audio alert when player is near
-- Bag sorting (still experimental)
+- ignite frame that shows bigger cd frame and tick damage
+- Damage and Threat meter
+- Very simple alternative to BigWigs called MiniWigs
+- AOE taunt alert
 
 ## Deleted Features
 (I no longer have need for them but can be found in the git history)
