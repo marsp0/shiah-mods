@@ -52,6 +52,7 @@ local function ignite_target_changed()
         if spell_id == 12654 then
             stacks:SetText(count);
             cooldown:SetCooldown(expiration_time - dur, dur)
+            tick:SetText("")
             return
         end
     end
