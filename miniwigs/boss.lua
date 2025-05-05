@@ -52,7 +52,7 @@ local function miniwigs_combat_event(...)
 end
 
 frame:SetScript("OnEvent", function(self, event, ...)
-    if event == "ENCOUNTER_START" then miniwigs_encounter_start(...) end
-    if event == "ENCOUNTER_END" then miniwigs_encounter_end(...) end
-    if event == "COMBAT_LOG_EVENT_UNFILTERED" then miniwigs_combat_event(...) end
+    if event == "ENCOUNTER_START"               then miniwigs_encounter_start(...) end
+    if event == "ENCOUNTER_END"                 then miniwigs_encounter_end(...) end
+    if event == "COMBAT_LOG_EVENT_UNFILTERED"   then miniwigs_combat_event(...) end
 end)
