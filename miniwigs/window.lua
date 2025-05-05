@@ -24,7 +24,6 @@ bar.texture:SetPoint("TOPLEFT", bar, 0, 0)
 bar.texture:SetSize(50, 50)
 
 function miniwigs_announcer_set_text(text)
-    SM_print(text)
     announcer.text:SetText(text)
     PlaySoundFile("Interface\\AddOns\\ShiahMods\\sounds\\info.ogg", "Master")
     C_Timer.After(3, function() announcer.text:SetText("") end)
