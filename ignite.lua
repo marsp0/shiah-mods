@@ -4,6 +4,8 @@ local event_map = { ["SPELL_AURA_APPLIED"] = true, ["SPELL_AURA_APPLIED_DOSE"] =
                     ["SPELL_AURA_REFRESH"] = true, ["SPELL_AURA_REMOVED"] = true,
                     ["SPELL_PERIODIC_DAMAGE"] = true, }
 
+if select(2, UnitClass("player")) ~= "MAGE" then return end
+
 local window = CreateFrame("Frame", "IgniteWindow", TargetFrame)
 window:SetWidth(total_width)
 window:SetHeight(total_height)
