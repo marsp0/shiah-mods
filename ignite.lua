@@ -1,10 +1,11 @@
+if GetRealmName() == "Spineshatter" then return end
+if select(2, UnitClass("player")) ~= "MAGE" then return end
+
 local total_width = 115
 local total_height = 30
 local event_map = { ["SPELL_AURA_APPLIED"] = true, ["SPELL_AURA_APPLIED_DOSE"] = true, 
                     ["SPELL_AURA_REFRESH"] = true, ["SPELL_AURA_REMOVED"] = true,
                     ["SPELL_PERIODIC_DAMAGE"] = true, }
-
-if select(2, UnitClass("player")) ~= "MAGE" then return end
 
 local window = CreateFrame("Frame", "IgniteWindow", TargetFrame)
 window:SetWidth(total_width)

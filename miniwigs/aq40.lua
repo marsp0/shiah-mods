@@ -1,3 +1,5 @@
+if GetRealmName() == "Spineshatter" then return end
+
 function miniwigs_skeram_on_event()
     local timestamp, subevent = CombatLogGetCurrentEventInfo()
     if subevent ~= "SPELL_AURA_APPLIED" then return end

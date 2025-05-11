@@ -1,3 +1,5 @@
+if GetRealmName() == "Spineshatter" then return end
+
 local prev = 0
 local window = CreateFrame("Frame", "Taunt", UIParent)
 window:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")

@@ -1,3 +1,5 @@
+if GetRealmName() == "Spineshatter" then return end
+
 local backdrop_window = { bgFile = "Interface\\Tooltips\\UI-Tooltip-Background",
                           tile = true, tileSize = 16, edgeSize = 16,
                           insets = { left = 3, right = 3, top = 3, bottom = 3 } }

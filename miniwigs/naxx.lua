@@ -1,3 +1,5 @@
+if GetRealmName() == "Spineshatter" then return end
+
 function miniwigs_raz_on_engage()
     miniwigs_bar_set_cooldown(29107, 25, 132333)
 end
