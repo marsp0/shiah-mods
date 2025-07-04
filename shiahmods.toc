@@ -10,11 +10,12 @@ bars.lua
 frames.lua
 tooltip.lua
 vendor.lua
-spy.lua
 health.lua
 ignite.lua
 map.lua
 taunt.lua
+
+pvp/spy.lua
 
 meters/window.lua
 meters/damage.lua
