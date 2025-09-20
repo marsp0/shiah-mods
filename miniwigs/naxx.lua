@@ -30,10 +30,6 @@ function miniwigs_noth_on_event()
     miniwigs_bar_set_cooldown(spell_id, 51.7)
 end
 
-function miniwigs_horsemen_on_engage()
-    miniwigs_bar_set_cooldown(28832, 21)
-end
-
 do
     local prev = 0
     function miniwigs_horsemen_on_event()
@@ -41,12 +37,14 @@ do
         if subevent ~= "SPELL_CAST_SUCCESS" then return end
 
         local spell_id = select(12, CombatLogGetCurrentEventInfo())
-        if spell_id ~= 28832 and spell_id ~= 28833 and spell_id ~= 28834 and spell_id ~= 28835 then return end
+        if  spell_id ~= 28832 and 
+            spell_id ~= 28833 and 
+            spell_id ~= 28834 and 
+            spell_id ~= 28835 then return end
         if timestamp - prev < 5 then return end
 
         prev = timestamp
         miniwigs_announcer_set_text("Mark")
-        miniwigs_bar_set_cooldown(spell_id, 12.9)
     end
 end
 

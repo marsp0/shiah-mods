@@ -19,7 +19,6 @@ local engage_handlers = {
     [1113] = miniwigs_raz_on_engage,
     [1117] = miniwigs_noth_on_engage,
     [1119] = miniwigs_saph_on_engage,
-    [1121] = miniwigs_horsemen_on_engage,
     [1115] = miniwigs_loatheb_on_engage,
 }
 
