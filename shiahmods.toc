@@ -1,4 +1,4 @@
-## Interface: 1
+## Interface: 11508
 ## Title: ShiahMods
 ## Author: Martin Spasov
 ## Version: 1.0
