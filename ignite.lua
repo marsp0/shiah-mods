@@ -26,6 +26,7 @@ stacks:SetPoint("CENTER", frame, 0, 0)
 
 local cooldown = CreateFrame("Cooldown", "IgniteCooldown", frame, "CooldownFrameTemplate")
 cooldown:SetDrawEdge(false)
+cooldown:SetHideCountdownNumbers(true)
 
 local frame2 = CreateFrame("Frame", nil, window)
 frame2:SetSize(total_width - total_height, total_height)
