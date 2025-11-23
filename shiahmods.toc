@@ -2,7 +2,7 @@
 ## Title: ShiahMods
 ## Author: Martin Spasov
 ## Version: 1.0
-## SavedVariables: SM_kill_map,SM_dmg_db
+## SavedVariables: SM_kill_map,SM_dmg_db,pi1_unit,pi1_server,pi2_unit,pi2_server,bop_unit,bop_server
 
 utils.lua
 alt_invite.lua
@@ -26,5 +26,6 @@ miniwigs/naxx.lua
 miniwigs/window.lua
 miniwigs/boss.lua
 miniwigs/vulnerability.lua
+miniwigs/pi.lua
 
 # find . -name '*.toc' -o -name '*.xml' -o -name '*.md' -o -name '*.lua' | xargs wc -l
