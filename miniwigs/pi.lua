@@ -1,22 +1,11 @@
 if GetRealmName() == "Spineshatter" then return end
 
-local pi_id = 28609 -- debug mage
-local bop_id = 28609 -- debug mage
+-- local pi_id = 28609 -- debug mage
+-- local bop_id = 28609 -- debug mage
 -- local pi_id = 20906 -- debug hunter
--- local pi_id = 10060 -- Power Infusion
--- local bop_id = 10278  -- Blessing of Protection
 
-function pi1_msg()
-    SendChatMessage("PI", "WHISPER", nil, pi1_unit .. "-" .. pi1_server)
-end
-
-function pi2_msg()
-    SendChatMessage("PI", "WHISPER", nil, pi2_unit .. "-" .. pi2_server)
-end
-
-function bop_msg()
-    SendChatMessage("!bop!", "WHISPER", nil, bop_unit .. "-" .. bop_server)
-end
+local pi_id = 10060 -- Power Infusion
+local bop_id = 10278  -- Blessing of Protection
 
 function pi1_on_event(self, event, ...)
     if event == "PLAYER_ENTERING_WORLD" then 
