@@ -27,5 +27,6 @@ miniwigs/window.lua
 miniwigs/boss.lua
 miniwigs/vulnerability.lua
 miniwigs/pi.lua
+miniwigs/consums.lua
 
 # find . -name '*.toc' -o -name '*.xml' -o -name '*.md' -o -name '*.lua' | xargs wc -l
