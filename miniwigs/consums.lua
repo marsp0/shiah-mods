@@ -1,5 +1,4 @@
-local action_bars = {'MultiBarRight','MultiBarLeft'}
-
+local last_check = 0
 local map = {
     [13512] = 17628, -- flask
     [13454] = 17539, -- greater arcane elixir
@@ -12,10 +11,7 @@ local map = {
     [22783] = 22783
 }
 
-local last_check = 0
-local f = CreateFrame("Frame")
-f:RegisterUnitEvent("UNIT_AURA", "player")
-f:SetScript("OnEvent", function(self, event, unit)
+function consums_check(self, unit)
     local now = GetTime()
     if (now - last_check) < 15 then return end
     last_check = now
@@ -29,6 +25,7 @@ f:SetScript("OnEvent", function(self, event, unit)
         auras[spell_id] = true
     end
 
+    local action_bars = {'MultiBarRight', 'MultiBarLeft'}
     for _, bar_name in pairs(action_bars) do
         for i = 1, 12 do
             local button = _G[bar_name .. 'Button' .. i]
@@ -44,10 +41,23 @@ f:SetScript("OnEvent", function(self, event, unit)
                         ActionButton_HideOverlayGlow(button)
                     else
                         ActionButton_ShowOverlayGlow(button)
-                    end
+                    end 
                 end
             end
         end
     end
+end
 
+local f = CreateFrame("Frame")
+f:RegisterEvent("PLAYER_ENTERING_WORLD")
+f:SetScript("OnEvent", function(self, event, unit)
+    if event == "PLAYER_ENTERING_WORLD" then
+        if IsInInstance() then
+            f:RegisterUnitEvent("UNIT_AURA", "player")
+        else 
+            f:UnregisterEvent("UNIT_AURA")
+        end
+    else
+        consums_check(self, unit)
+    end
 end)
