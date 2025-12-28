@@ -91,8 +91,6 @@ local function damage_log_event(self)
     end
 
     dps_add_data(SM_dmg_db["Current"], sourceName, spell_name, amount - overkill)
-
-    if spell_id == 12654 then return end -- ignore ignite damage in overall data
     dps_add_data(SM_dmg_db["Overall"], sourceName, spell_name, amount - overkill)
 end
 
