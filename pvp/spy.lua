@@ -1,5 +1,3 @@
-if GetRealmName() ~= "Spineshatter" then return end
-
 SM_kill_map = SM_kill_map or {}
 local broadcast_map = {}
 local last_broadcast_time = 0

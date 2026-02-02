@@ -1,5 +1,3 @@
-if GetRealmName() == "Spineshatter" then return end
-
 local window = CreateFrame("Frame", "MiniWigs", UIParent)
 window:SetWidth(50)
 window:SetHeight(50)

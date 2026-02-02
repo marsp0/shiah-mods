@@ -1,5 +1,3 @@
-if GetRealmName() == "Spineshatter" then return end
-
 local in_combat = false
 local last_update = 0
 

@@ -1,5 +1,3 @@
-if GetRealmName() == "Spineshatter" then return end
-
 local pi_id = 10060 -- Power Infusion
 local bop_id = 10278  -- Blessing of Protection
 

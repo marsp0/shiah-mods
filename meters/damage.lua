@@ -1,5 +1,3 @@
-if GetRealmName() == "Spineshatter" then return end
-
 local empty_db = { ["Overall"] = {}, ["Current"] = {}}
 SM_dmg_db = SM_dmg_db or empty_db
 local current_view = "Overall"

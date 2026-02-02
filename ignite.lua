@@ -1,4 +1,3 @@
-if GetRealmName() == "Spineshatter" then return end
 if select(2, UnitClass("player")) ~= "MAGE" then return end
 
 local total_width = 115

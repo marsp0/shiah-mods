@@ -1,5 +1,3 @@
-if GetRealmName() == "Spineshatter" then return end
-
 local event_handlers = { 
     [709] = miniwigs_skeram_on_event,
     [710] = miniwigs_bug_trio_on_event,
