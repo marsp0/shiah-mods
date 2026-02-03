@@ -96,7 +96,7 @@ function damage_on_update(self)
     local now = GetTime()
     if now - last_draw < 0.25 then return end
 
-    if now - combat_end > 5 and not recent_cleared then
+    if now - combat_end > 2.5 and not recent_cleared then
         SM_dmg_db["Current"] = {}
         recent_cleared = true
         damage_swap_view(self, "Overall")
