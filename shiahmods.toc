@@ -15,7 +15,7 @@ ignite.lua
 map.lua
 taunt.lua
 
-pvp/spy.lua
+#pvp/spy.lua
 
 meters/window.lua
 meters/damage.lua
