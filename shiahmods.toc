@@ -11,9 +11,7 @@ frames.lua
 tooltip.lua
 vendor.lua
 health.lua
-ignite.lua
 map.lua
-taunt.lua
 
 #pvp/spy.lua
 
@@ -28,5 +26,7 @@ miniwigs/boss.lua
 miniwigs/vulnerability.lua
 miniwigs/pi.lua
 miniwigs/consums.lua
+miniwigs/taunt.lua
+miniwigs/ignite.lua
 
 # find . -name '*.toc' -o -name '*.xml' -o -name '*.md' -o -name '*.lua' | xargs wc -l
