@@ -2,7 +2,7 @@
 ## Title: ShiahMods
 ## Author: Martin Spasov
 ## Version: 1.0
-## SavedVariables: sm_config,SM_kill_map,SM_dmg_db
+## SavedVariables: sm_config,SM_dmg_db
 
 utils.lua
 alt_invite.lua
@@ -12,8 +12,6 @@ tooltip.lua
 vendor.lua
 health.lua
 map.lua
-
-#pvp/spy.lua
 
 meters/window.lua
 meters/damage.lua
