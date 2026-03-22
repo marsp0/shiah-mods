@@ -2,7 +2,7 @@
 ## Title: ShiahMods
 ## Author: Martin Spasov
 ## Version: 1.0
-## SavedVariables: SM_kill_map,SM_dmg_db,pi1_unit,pi1_server,pi2_unit,pi2_server,bop_unit,bop_server
+## SavedVariables: sm_config,SM_kill_map,SM_dmg_db
 
 utils.lua
 alt_invite.lua

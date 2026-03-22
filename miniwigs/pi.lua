@@ -1,5 +1,6 @@
 local pi_id = 10060 -- Power Infusion
 local bop_id = 10278  -- Blessing of Protection
+sm_config = sm_config or {}
 
 -- local pi_id = 28609 -- debug mage
 -- local bop_id = 28609 -- debug mage
@@ -7,8 +8,8 @@ local bop_id = 10278  -- Blessing of Protection
 
 function pi1_on_event(self, event, ...)
     if event == "PLAYER_ENTERING_WORLD" then 
-        self.unit = pi1_unit or "Shiah"
-        self.server = pi1_server or "Golemagg"
+        self.unit = sm_config["pi1_unit"] or "Shiah"
+        self.server = sm_config["pi1_server"] or "Golemagg"
         return;
     end
 
@@ -23,8 +24,8 @@ end
 
 function pi2_on_event(self, event, ...)
     if event == "PLAYER_ENTERING_WORLD" then 
-        self.unit = pi2_unit or "Shiah"
-        self.server = pi2_server or "Golemagg"
+        self.unit = sm_config["pi2_unit"] or "Shiah"
+        self.server = sm_config["pi2_server"] or "Golemagg"
         return;
     end
 
@@ -39,8 +40,8 @@ end
 
 function bop_on_event(self, event, ...)
     if event == "PLAYER_ENTERING_WORLD" then 
-        self.unit = bop_unit or "Shiah"
-        self.server = bop_server or "Golemagg"
+        self.unit = sm_config["bop_unit"] or "Shiah"
+        self.server = sm_config["bop_server"] or "Golemagg"
         return;
     end
 
@@ -53,7 +54,7 @@ function bop_on_event(self, event, ...)
     self:SetCooldown(GetTime(), 180)
 end
 
-pi1 = CreateFrame("Cooldown", "MultiBarBottomLeftButton5CD", MultiBarBottomLeftButton5, "CooldownFrameTemplate")
+pi1 = CreateFrame("Cooldown", " ", MultiBarBottomLeftButton5, "CooldownFrameTemplate")
 pi1:SetDrawEdge(false)
 pi1:RegisterEvent("UNIT_SPELLCAST_SUCCEEDED")
 pi1:RegisterEvent("PLAYER_ENTERING_WORLD")
@@ -81,8 +82,8 @@ bop.server = "Golemagg"
 SlashCmdList['PI_ONE_SLASHCMD'] = function(msg)
     pi1.unit, pi1.server = UnitName("target")
     if not pi1.server then pi1.server = GetRealmName() end
-    pi1_unit = pi1.unit
-    pi1_server = pi1.server
+    sm_config["pi1_unit"] = pi1.unit
+    sm_config["pi1_server"] = pi1.server
     SM_print("PI 1: " .. pi1.unit .. "-" .. pi1.server)
 end
 SLASH_PI_ONE_SLASHCMD1 = '/pi1'
@@ -90,8 +91,8 @@ SLASH_PI_ONE_SLASHCMD1 = '/pi1'
 SlashCmdList['PI_TWO_SLASHCMD'] = function(msg)
     pi2.unit, pi2.server = UnitName("target")
     if not pi2.server then pi2.server = GetRealmName() end
-    pi2_unit = pi2.unit
-    pi2_server = pi2.server
+    sm_config["pi2_unit"] = pi2.unit
+    sm_config["pi2_server"] = pi2.server
     SM_print("PI 2: " .. pi2.unit .. "-" .. pi2.server)
 end
 SLASH_PI_TWO_SLASHCMD1 = '/pi2'
@@ -99,8 +100,8 @@ SLASH_PI_TWO_SLASHCMD1 = '/pi2'
 SlashCmdList['BOP_SLASHCMD'] = function(msg)
     bop.unit, bop.server = UnitName("target")
     if not bop.server then bop.server = GetRealmName() end
-    bop_unit = bop.unit
-    bop_server = bop.server
+    sm_config["bop_unit"] = bop.unit
+    sm_config["bop_server"] = bop.server
     SM_print("BOP: " .. bop.unit .. "-" .. bop.server)
 end
 SLASH_BOP_SLASHCMD1 = '/bop'
