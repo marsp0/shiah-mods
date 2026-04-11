@@ -12,6 +12,7 @@ tooltip.lua
 vendor.lua
 health.lua
 map.lua
+trinket.lua
 
 meters/window.lua
 meters/damage.lua
