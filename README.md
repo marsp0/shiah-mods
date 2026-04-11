@@ -11,6 +11,10 @@ Small addon that i use for myself.
 - Damage and Threat meter
 - Very simple alternative to BigWigs called MiniWigs
 - AOE taunt alert
+- bwl vulnerability tracker
+- pi cooldowns (very basic)
+- missing consumables checker
+- trinket menu (simplified)
 
 ## Deleted Features
 (I no longer have need for them but can be found in the git history)
@@ -20,3 +24,7 @@ Small addon that i use for myself.
 - Auto enable combat log
 - Sunder/FF/IEA/COR tracker
 - KOS list + audio alert when player is near
+
+## Improvements
+- add ability to disable modules using slash commands
+- consistent naming of frames and functions

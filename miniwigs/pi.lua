@@ -1,13 +1,15 @@
+if select(2, UnitClass("player")) ~= "MAGE" then return end
+
 sm_config = sm_config or {}
 local str_2_frame = {
-    ["PI1"] = "MultiBarBottomLeftButton5CD",
-    ["PI2"] = "MultiBarBottomLeftButton4CD",
-    ["BOP"] = "MultiBarBottomLeftButton3CD"
+    ["PI1"] = "MultiBarBottomLeftButton12CD",
+    ["PI2"] = "MultiBarBottomLeftButton11CD",
+    ["BOP"] = "MultiBarBottomLeftButton10CD"
 }
 local pi_id = 10060 -- Power Infusion
 local bop_id = 10278  -- Blessing of Protection
--- local pi_id = 28609 -- debug mage
--- local bop_id = 10220 -- debug mage
+-- local pi_id = 28609 -- debug mage frost ward
+-- local bop_id = 10220 -- debug mage ice armor
 
 function SM_request(name)
     if name == "PI1" then
@@ -19,13 +21,13 @@ function SM_request(name)
     end
 end
 
-pi1 = CreateFrame("Cooldown", "MultiBarBottomLeftButton5CD", MultiBarBottomLeftButton5, "CooldownFrameTemplate")
+pi1 = CreateFrame("Cooldown", "MultiBarBottomLeftButton12CD", MultiBarBottomRightButton12, "CooldownFrameTemplate")
 pi1:SetDrawEdge(false)
 
-pi2 = CreateFrame("Cooldown", "MultiBarBottomLeftButton4CD", MultiBarBottomLeftButton4, "CooldownFrameTemplate")
+pi2 = CreateFrame("Cooldown", "MultiBarBottomLeftButton11CD", MultiBarBottomRightButton11, "CooldownFrameTemplate")
 pi2:SetDrawEdge(false)
 
-bop = CreateFrame("Cooldown", "MultiBarBottomLeftButton3CD", MultiBarBottomLeftButton3, "CooldownFrameTemplate")
+bop = CreateFrame("Cooldown", "MultiBarBottomLeftButton10CD", MultiBarBottomRightButton10, "CooldownFrameTemplate")
 bop:SetDrawEdge(false)
 
 local f = CreateFrame("Frame")

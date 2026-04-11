@@ -29,3 +29,23 @@ MultiBarBottomLeft:SetPoint("TOPLEFT", 8, -x)
 
 RAID_CLASS_COLORS["SHAMAN"] = CreateColor(0.0, 0.44, 0.87);
 RAID_CLASS_COLORS["SHAMAN"].colorStr = RAID_CLASS_COLORS["SHAMAN"]:GenerateHexColor();
+
+-- reposition action bar 3
+MultiBarBottomRight:SetPoint("LEFT", MainMenuBar, "LEFT", 90, 0)
+MultiBarBottomRight:SetPoint("BOTTOM", MainMenuBar, "TOP", 0, 38)
+
+for i = 1, 7 do
+    local button = _G["MultiBarBottomRightButton"..i]
+    button:ClearAllPoints()
+    button:SetScale(0.9)
+    if i == 1 then
+        button:SetPoint("BOTTOMLEFT", MultiBarBottomRight, "BOTTOMLEFT", 36, 2)
+    else
+        button:SetPoint("LEFT", _G["MultiBarBottomRightButton"..(i-1)], "RIGHT", 8, 0)
+    end
+end
+
+-- reposition PI frame
+local button_w = MultiBarBottomRightButton8:GetWidth()
+MultiBarBottomRightButton8:ClearAllPoints()
+MultiBarBottomRightButton8:SetPoint("TOPLEFT", UIParent, "CENTER", -(button_w * 2.5 + 12), -200)
