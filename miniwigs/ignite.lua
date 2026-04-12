@@ -1,54 +1,49 @@
 if select(2, UnitClass("player")) ~= "MAGE" then return end
 
-local total_width = 115
-local total_height = 30
 local event_map = { ["SPELL_AURA_APPLIED"] = true, ["SPELL_AURA_APPLIED_DOSE"] = true, 
                     ["SPELL_AURA_REFRESH"] = true, ["SPELL_AURA_REMOVED"] = true,
                     ["SPELL_PERIODIC_DAMAGE"] = true, }
 
-local window = CreateFrame("Frame", "IgniteWindow", TargetFrame)
-window:SetWidth(total_width)
-window:SetHeight(total_height)
-window:SetPoint("BOTTOMLEFT", TargetFrame, "TOPLEFT", 8, -19)
+local frame = CreateFrame("Frame", "ShiahModsIgniteFrame", TargetFrame)
+frame:SetFrameLevel(TargetFrame:GetFrameLevel())
+frame:SetWidth(TargetFramePortrait:GetWidth())
+frame:SetHeight(TargetFramePortrait:GetHeight())
+frame:SetPoint("TOPLEFT", TargetFramePortrait, "TOPLEFT", 0, 0)
 
-local frame = CreateFrame("Frame", "IgniteFrame", window)
-frame:SetSize(total_height, total_height)
-frame:SetPoint("TOPLEFT", window, 0, 0)
-
-local texture = frame:CreateTexture("IgniteTexture", "ARTWORK")
-texture:SetPoint("TOPLEFT", frame, 0, 0)
-texture:SetTexture(135818)
-texture:SetSize(total_height, total_height)
-
-local stacks = frame:CreateFontString("IgniteStacks", "OVERLAY", "NumberFontNormalLarge")
-stacks:SetPoint("CENTER", frame, 0, 0)
-
-local cooldown = CreateFrame("Cooldown", "IgniteCooldown", frame, "CooldownFrameTemplate")
+local cooldown = CreateFrame("Cooldown", "$parentCooldown", frame, "CooldownFrameTemplate")
 cooldown:SetDrawEdge(false)
+cooldown:SetDrawBling(false)
 cooldown:SetHideCountdownNumbers(true)
+cooldown:SetSwipeTexture("Interface\\CHARACTERFRAME\\TempPortraitAlphaMaskSmall")
 
-local frame2 = CreateFrame("Frame", nil, window)
-frame2:SetSize(total_width - total_height, total_height)
-frame2:SetPoint("TOPLEFT", frame, "TOPRIGHT", 0, 0)
+local stacks = cooldown:CreateFontString("$parentStacks", "OVERLAY", "NumberFontNormalLarge")
+stacks:SetDrawLayer("OVERLAY")
+stacks:SetPoint("CENTER", cooldown, "CENTER", 0, 10)
+stacks:SetFont(STANDARD_TEXT_FONT, 14, "OUTLINE")
 
-local tick = frame2:CreateFontString("IgniteTick", "OVERLAY", "GameFontNormal")
-tick:SetPoint("CENTER", frame2, 0, 0)
+local tick = cooldown:CreateFontString("$parentTick", "OVERLAY", "NumberFontNormalLarge")
+tick:SetDrawLayer("OVERLAY")
+tick:SetPoint("CENTER", cooldown, "CENTER", 0, -10)
+tick:SetFont(STANDARD_TEXT_FONT, 14, "OUTLINE")
 
 local function ignite_enter_world(self)
     if IsInInstance() then
         SM_print("Ignite enabled")
         self:Show()
-        self:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
+        self:RegisterEvent("PLAYER_TARGET_CHANGED")
+        self:RegisterEvent("COMBAT_LOG_EVENT_UNFILTERED", "target")
     else
         SM_print("Ignite disabled")
         self:Hide()
+        self:UnregisterEvent("PLAYER_TARGET_CHANGED")
         self:UnregisterEvent("COMBAT_LOG_EVENT_UNFILTERED")
     end
 end
 
 local function ignite_target_changed()
     stacks:SetText("");
-    cooldown:Clear()
+    cooldown:Clear();
+    tick:SetText("")
     for i = 1, 16 do
         local name, _, count, _, dur, expiration_time, caster, _, _, spell_id = UnitDebuff("target", i)
         if not name then break end
@@ -69,18 +64,25 @@ local function ignite_combat_log_event()
     local spell_id = select(12, CombatLogGetCurrentEventInfo())
     if spell_id ~= 12654 then return end -- only track Ignite
 
-    if event_type == "SPELL_AURA_APPLIED"       then stacks:SetText("1") end
-    if event_type == "SPELL_AURA_APPLIED_DOSE"  then stacks:SetText(select(16, CombatLogGetCurrentEventInfo())) end
-    if event_type == "SPELL_PERIODIC_DAMAGE"    then tick:SetText(select(15, CombatLogGetCurrentEventInfo())) end
-    if event_type == "SPELL_AURA_REMOVED"       then stacks:SetText(""); tick:SetText("") end
-    if event_type == "SPELL_AURA_APPLIED" or 
-       event_type == "SPELL_AURA_APPLIED_DOSE" or 
-       event_type == "SPELL_AURA_REFRESH"       then cooldown:SetCooldown(GetTime(), 4) end
+    if event_type == "SPELL_AURA_APPLIED" then stacks:SetText("1") end
+    if event_type == "SPELL_AURA_APPLIED_DOSE" then stacks:SetText(select(16, CombatLogGetCurrentEventInfo())) end
+    if event_type == "SPELL_PERIODIC_DAMAGE" then
+        dmg = select(15, CombatLogGetCurrentEventInfo())
+        if dmg > 999 then
+            dmg = math.floor(dmg / 100) / 10
+            tick:SetText(string.format("%.1fk", dmg))
+        else
+            tick:SetText(string.format("%d", dmg))
+        end
+    end
+    if  event_type == "SPELL_AURA_REMOVED" then stacks:SetText(""); tick:SetText("") end
+    if  event_type == "SPELL_AURA_APPLIED" or 
+        event_type == "SPELL_AURA_APPLIED_DOSE" or 
+        event_type == "SPELL_AURA_REFRESH" then cooldown:SetCooldown(GetTime(), 4) end
 end
 
-window:RegisterEvent("PLAYER_ENTERING_WORLD")
-window:RegisterEvent("PLAYER_TARGET_CHANGED")
-window:SetScript("OnEvent", function(self, event, ...)
+frame:RegisterEvent("PLAYER_ENTERING_WORLD")
+frame:SetScript("OnEvent", function(self, event, ...)
     if event == "PLAYER_ENTERING_WORLD"         then ignite_enter_world(self) end
     if event == "PLAYER_TARGET_CHANGED"         then ignite_target_changed() end
     if event == "COMBAT_LOG_EVENT_UNFILTERED"   then ignite_combat_log_event() end

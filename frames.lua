@@ -6,10 +6,10 @@ function move_frames_to_center(...)
         SetCVar("UnitNamePlayerPVPTitle", 0)
 
         PlayerFrame:ClearAllPoints()
-        PlayerFrame:SetPoint("CENTER", -230, -140)
+        PlayerFrame:SetPoint("CENTER", -224, -140) -- 224 is the max possible in the range (221 - 231) that does not leave a gap in the hp/mana bars
 
         TargetFrame:ClearAllPoints()
-        TargetFrame:SetPoint("CENTER", 230, -140)
+        TargetFrame:SetPoint("CENTER", 224, -140)
         SM_print("Moved player and target frames")
 
         local player_color_frame = CreateFrame("FRAME", nil, PlayerFrame)
