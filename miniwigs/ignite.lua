@@ -5,7 +5,7 @@ local event_map = { ["SPELL_AURA_APPLIED"] = true, ["SPELL_AURA_APPLIED_DOSE"] =
                     ["SPELL_PERIODIC_DAMAGE"] = true, }
 
 local frame = CreateFrame("Frame", "ShiahModsIgniteFrame", TargetFrame)
-frame:SetFrameLevel(TargetFrame:GetFrameLevel() - 1)
+frame:SetFrameLevel(TargetFrame:GetFrameLevel())
 frame:SetWidth(TargetFramePortrait:GetWidth())
 frame:SetHeight(TargetFramePortrait:GetHeight())
 frame:SetPoint("TOPLEFT", TargetFramePortrait, "TOPLEFT", 0, 0)
@@ -19,12 +19,12 @@ cooldown:SetSwipeTexture("Interface\\CHARACTERFRAME\\TempPortraitAlphaMaskSmall"
 local stacks = cooldown:CreateFontString("$parentStacks", "OVERLAY", "NumberFontNormalLarge")
 stacks:SetDrawLayer("OVERLAY")
 stacks:SetPoint("CENTER", cooldown, "CENTER", 0, 10)
-stacks:SetFont(STANDARD_TEXT_FONT, 14, "OUTLINE")
+stacks:SetFont(STANDARD_TEXT_FONT, 16, "OUTLINE")
 
 local tick = cooldown:CreateFontString("$parentTick", "OVERLAY", "NumberFontNormalLarge")
 tick:SetDrawLayer("OVERLAY")
 tick:SetPoint("CENTER", cooldown, "CENTER", 0, -10)
-tick:SetFont(STANDARD_TEXT_FONT, 14, "OUTLINE")
+tick:SetFont(STANDARD_TEXT_FONT, 16, "OUTLINE")
 
 local function ignite_enter_world(self)
     if IsInInstance() then
