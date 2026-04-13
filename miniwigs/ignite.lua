@@ -5,7 +5,7 @@ local event_map = { ["SPELL_AURA_APPLIED"] = true, ["SPELL_AURA_APPLIED_DOSE"] =
                     ["SPELL_PERIODIC_DAMAGE"] = true, }
 
 local frame = CreateFrame("Frame", "ShiahModsIgniteFrame", TargetFrame)
-frame:SetFrameLevel(TargetFrame:GetFrameLevel())
+frame:SetFrameLevel(TargetFrame:GetFrameLevel() - 1)
 frame:SetWidth(TargetFramePortrait:GetWidth())
 frame:SetHeight(TargetFramePortrait:GetHeight())
 frame:SetPoint("TOPLEFT", TargetFramePortrait, "TOPLEFT", 0, 0)
